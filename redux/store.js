@@ -1,6 +1,24 @@
-import { configureStore } from "@reduxjs/toolkit";
+//store is composed of the entire application's state
 
-//create a store and give it reducers
-export const store = configureStore({
-  reducer: {},
-});
+import cartSlice from "./slices/cartSlice";
+
+
+const { configureStore } = require("@reduxjs/toolkit");
+
+//store => multiple slices
+
+//1) create a store 
+
+const store = configureStore({
+
+    reducer: {
+
+        cart: cartSlice,
+
+    }
+})
+export default store
+
+
+
+////connect the store to the app through the provider 

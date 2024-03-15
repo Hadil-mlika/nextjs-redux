@@ -1,10 +1,17 @@
+"use client"
 import Breadcrumb from "@/components/Breadcrumb";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useSelector } from "react-redux";
 
 export default function Cart() {
+
+  const items = useSelector(state => state.cart)
+  console.log(items)
+
+
   return (
     <div className="px-20 py-16">
       <Breadcrumb />
@@ -20,13 +27,7 @@ export default function Cart() {
             {/* CART1 */}
             <div className="flex items-center justify-between border-b border-slate-400  pb-3 font-semibold text-sm mb-4">
               <div className="flex items-center gap-3">
-                <Image
-                  src="/tomato.webp"
-                  width={249}
-                  height={249}
-                  alt="Alt text"
-                  className="rounded-xl w-20 h-20"
-                />
+         
                 <div className="flex flex-col">
                   <h2>Apple Watch Series 7 - 44mm</h2>
                   <small>Golden</small>
@@ -51,13 +52,7 @@ export default function Cart() {
             {/* CART 2 */}
             <div className="flex items-center justify-between border-b border-slate-400  pb-3 font-semibold text-sm">
               <div className="flex items-center gap-3">
-                <Image
-                  src="/tomato.webp"
-                  width={249}
-                  height={249}
-                  alt="Alt text"
-                  className="rounded-xl w-20 h-20"
-                />
+        
                 <div className="flex flex-col">
                   <h2>Apple Watch Series 7 - 44mm</h2>
                   <small>Golden</small>
